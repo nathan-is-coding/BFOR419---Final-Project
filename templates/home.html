@@ -1,0 +1,48 @@
+<html>
+<head>
+    <!--<link rel="stylesheet" href="home.css">-->
+
+    <style>
+        h1{
+            text-align: center;
+        }
+        body {
+            background-color: lightblue;
+        }
+        #div1 {
+            background-color: lightgreen;
+            border-style: solid;
+            border-width: medium;   
+            padding: 10px 6px 6px 10px;
+        }
+    </style>
+
+    <title>Home</title>
+</head>
+
+<body>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.0.1/socket.io.js" integrity="sha512-q/dWJ3kcmjBLU4Qc47E4A9kTB4m3wuTY7vkFJDTZKjTs8jhyGQnaUrxa0Ytd0ssMZhbNua9hE+E7Qv1j+DyZwA==" crossorigin="anonymous"></script>
+    <script type="text/javascript" charset="utf-8">
+        var socket = io();
+
+        socket.on('Update', function() {
+            window.location.reload()
+            console.log("Reload")
+        });
+    </script>
+
+    <h1>Server Dashboard</h1>
+
+    <div id="div1"><u>Server Statistics</u>
+        <div id="div2">
+            {{cpuUsage}}<br>
+            {{ramUsage}}<br>
+            {{ramTotal}}<br>
+            {{storageUsage}}<br>
+            {{storageAvailable}}<br>
+            {{storageTotal}}
+        </div>
+    </div>
+
+</body>
+</html>

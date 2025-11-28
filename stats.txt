@@ -1,0 +1,6 @@
+CPU Usage - 5.4%
+RAM Usage -  7623.3 MiB
+RAM Total - 31961.4 MiB
+Storage Used - 408G
+Storage Available - 461G
+Storage Total - 915G
