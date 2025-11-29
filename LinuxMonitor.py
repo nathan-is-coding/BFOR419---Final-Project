@@ -21,7 +21,7 @@ def send_update():
             print("Update sent")
 
 def readStatistics():
-    global cpuUsage, ramUsage, ramTotal, storageUsage, storageAvailable, storageTotal
+    global cpuUsage, ramUsage, ramTotal, storageUsage, storageAvailable, storageTotal, sshStatus, sshRuntime, apacheStatus, apacheRuntime
     with open('stats.txt', "r") as file:
         cpuUsage = file.readline()
         ramUsage = file.readline()
@@ -29,6 +29,10 @@ def readStatistics():
         storageUsage = file.readline()
         storageAvailable = file.readline()
         storageTotal = file.readline()
+        sshStatus = file.readline()
+        sshRuntime = file.readline()
+        apacheStatus = file.readline()
+        apacheRuntime = file.readline()
 
 def GetStatistics():
     while True:
@@ -47,7 +51,11 @@ def home():
         ramTotal=ramTotal,
         storageUsage=storageUsage,
         storageAvailable=storageAvailable,
-        storageTotal=storageTotal
+        storageTotal=storageTotal,
+        sshStatus=sshStatus,
+        sshRuntime=sshRuntime,
+        apacheStatus=apacheStatus,
+        apacheRuntime=apacheRuntime
         )
 
 @socketio.on('connect')
